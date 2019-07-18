@@ -5,7 +5,7 @@ import re
 
 def extract_song_snippet(generated_text):
     pattern = '\n\n(.*?)\n\n'
-    search_results = re.findall(pattern, generated_text, overlapped=True, flags=re.DOTALL)
+    search_results = re.findall(pattern, generated_text, flags=re.DOTALL)
     songs = [song for song in search_results]
     print "Found {} possible songs in generated texts".format(len(songs))
     return songs
